@@ -234,17 +234,20 @@ public class Problem {
 		}
 	}
 	
+	
 	public void read() {
 		FileReader fileReader = new FileReader();
 		ArrayList<String> lines = fileReader.readFile(filePath);
 		for(String line: lines) {
+			//Separación
 			String[] lineDetail = line.split("\t");
-			Sentence sentence = new Sentence(lineDetail[0], stringCleaner(lineDetail[1]).toLowerCase());
+			Sentence sentence = new Sentence(lineDetail[0], stringCleaner(lineDetail[1]));
 			
 			sentences.add(sentence);
 		}
 	}
 	
+	//Sanitización
 	public String stringCleaner(String sentence) {
 		sentence = sentence.replace(".", " ");
 		sentence = sentence.replace(",", " ");
@@ -269,6 +272,6 @@ public class Problem {
 		sentence = sentence.replace("=", " ");
 		sentence = sentence.replace("¼", " ");
 		sentence = sentence.replace("|", " ");
-		return sentence;
+		return sentence.toLowerCase();
 	}
 }

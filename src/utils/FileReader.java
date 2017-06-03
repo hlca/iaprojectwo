@@ -12,6 +12,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class FileReader {
+	//Lectura
 	public ArrayList<String> readFile(String filePath) {
 		ArrayList<String> lines = new ArrayList<String>();
 		
